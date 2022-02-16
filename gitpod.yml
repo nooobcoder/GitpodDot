@@ -1,0 +1,9 @@
+tasks:
+    - before: >
+          [[ ! -z $GNUPG_KEY  ]] &&
+          git config --global user.name "nooobcoder" &&
+          git config --global user.email "suryashi2013@gmail.com" &&
+          gpg --verbose --batch --import <(echo $GNUPG_KEY|base64 -d) &&
+          echo 'pinentry-mode loopback' >> ~/.gnupg/gpg.conf &&
+          git config --global user.signingkey $GNUPG_SIGNING_KEY &&
+          git config commit.gpgsign true
