@@ -58,3 +58,6 @@ for dotfile in "$DOTFILES_CLONE_PATH/".*; do
   echo "Symlinking $dotfile"
   ln -sf "$dotfile" "$HOME"
 done
+
+cat .zshrc >> ~/.zshrc
+chsh -s $(which zsh)
