@@ -19,6 +19,7 @@ git config --global user.name "nooobcoder"
 git config --global user.email "suryashi2013@gmail.com"
 git config --global user.signingkey F4471868B502ACC037FBF1FB7C2D646CF53E03BD
 git config --global commit.gpgsign true  
+echo 'pinentry-mode loopback' >> ~/.gnupg/gpg.conf
 
 cat ./.zshrc >> ~/.zshrc
 chsh -s $(which zsh)
